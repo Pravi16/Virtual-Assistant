@@ -3,7 +3,7 @@ import speech_recognition
 import pyttsx3
 import sys
 
-#initialise speech_recognition
+#initialise speech recognition
 recognizer=speech_recognition.Recognizer()
 
 speaker=pyttsx3.init()
@@ -32,7 +32,7 @@ def create_note():
                 note=note.lower()
                 
                 
-                speaker.say("Choose a filename!")
+                speaker.say("Choose a filename..")
                 speaker.runAndWait()
                 
                 recognizer.adjust_for_ambient_noise(mic,duration=0.2)
@@ -54,7 +54,7 @@ def create_note():
         
         except speech_recognition.UnknownValueError:
             recognizer=speech_recognition.Recognizer()
-            speaker.say("I did not understand you. Please try again")
+            speaker.say("I could not understand you. Please try again")
             speaker.runAndWait()
 
 def add_todo():
